@@ -5,49 +5,56 @@ import { useState } from 'react'
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   return (
-    <div className='bg-gray-300 px-4 py-2'>
-      <div className='container mx-auto flex justify-between items-center'>
-        <p className='text-xl font-bold'>Philip Laxamana</p>
+    <nav className='bg-gray-300'>
+      <div className='container mx-auto flex justify-between items-center px-4'>
+        <p className='font-bold py-4'>Philip Laxamana</p>
         <FiMenu
-          size='1.25em'
-          className='cursor-pointer'
+          className='w-6 h-6 cursor-pointer md:hidden'
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         />
-        <div className={`${isMenuOpen ? 'fixed top-0 right-0 bg-gray-600 text-white flex flex-col items-end text-right py-4 px-6 min-h-screen w-1/2' : 'hidden'}`}>
-          <FiX
-            size='1.25em'
-            className='cursor-pointer mb-6'
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          />
-          <ul className="space-y-6">
-            <li>
-              <Link href='/'>
-                <a>Home</a>
-              </Link>
-            </li>
-            <li>
-              <Link href='#'>
-                <a>Portfolio</a>
-              </Link>
-            </li>
-            <li>
-              <Link href='#'>
-                <a>About</a>
-              </Link>
-            </li>
-            <li>
-              <Link href='#'>
-                <a>Blog</a>
-              </Link>
-            </li>
-            <li>
-              <Link href='#'>
-                <a>Contact Me</a>
-              </Link>
-            </li>
-          </ul>
+        <div className='hidden md:block space-x-4'>
+          <Link href='#'>
+            <a className='inline-block py-4 px-4 hover:bg-gray-200'>Home</a>
+          </Link>
+          <Link href='#'>
+            <a className='inline-block py-4 px-4 hover:bg-gray-200'>
+              Portfolio
+            </a>
+          </Link>
+          <Link href='#'>
+            <a className='inline-block py-4 px-4 hover:bg-gray-200'>About</a>
+          </Link>
+          <Link href='#'>
+            <a className='inline-block py-4 px-4 hover:bg-gray-200'>Blog</a>
+          </Link>
+          <Link href='#'>
+            <a className='inline-block py-4 px-4 hover:bg-gray-200'>
+              Contact Me
+            </a>
+          </Link>
         </div>
       </div>
-    </div>
+      <div className={`${isMenuOpen ? 'block fixed top-0 right-0 min-h-screen pt-4 w-64 bg-gray-300' : 'hidden'} text-right`}>
+        <FiX
+          className='w-6 h-6 cursor-pointer ml-auto mr-6 mb-4'
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        />
+        <Link href='#'>
+          <a className='block py-4 px-6 hover:bg-gray-200'>Home</a>
+        </Link>
+        <Link href='#'>
+          <a className='block py-4 px-6 hover:bg-gray-200'>Portfolio</a>
+        </Link>
+        <Link href='#'>
+          <a className='block py-4 px-6 hover:bg-gray-200'>About</a>
+        </Link>
+        <Link href='#'>
+          <a className='block py-4 px-6 hover:bg-gray-200'>Blog</a>
+        </Link>
+        <Link href='#'>
+          <a className='block py-4 px-6 hover:bg-gray-200'>Contact Me</a>
+        </Link>
+      </div>
+    </nav>
   )
 }
