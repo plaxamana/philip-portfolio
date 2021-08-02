@@ -5,7 +5,7 @@ import { useState } from 'react'
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   return (
-    <nav className='bg-gray-300'>
+    <nav className='bg-gray-300 absolute w-full'>
       <div className='container mx-auto flex justify-between items-center px-4'>
         <p className='font-bold py-4'>Philip Laxamana</p>
         <FiMenu
@@ -34,7 +34,7 @@ export default function Header() {
           </Link>
         </div>
       </div>
-      <div className={`${isMenuOpen ? 'block fixed top-0 right-0 min-h-screen pt-4 w-64 bg-gray-300' : 'hidden'} text-right`}>
+      <div className={`${isMenuOpen ? 'block fixed z-20 top-0 right-0 min-h-screen pt-4 w-64 bg-gray-300' : 'hidden'} text-right`}>
         <FiX
           className='w-6 h-6 cursor-pointer ml-auto mr-6 mb-4'
           onClick={() => setIsMenuOpen(!isMenuOpen)}
