@@ -1,5 +1,7 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { FiEye, FiDownload } from 'react-icons/fi'
+import Blob from './Blob'
 
 export default function Hero() {
   return (
@@ -24,6 +26,24 @@ export default function Hero() {
           </a>
         </Link>
       </div>
+      <HeroImage />
     </section>
+  )
+}
+
+const HeroImage = () => {
+  return (
+    <div className='relative flex justify-center h-full p-4 mt-24 lg:mt-32'>
+      <Image
+        src='/images/svg/home/coding_illustration.svg'
+        alt='Illustration of a man coding'
+        width={560}
+        height={447}
+      />
+      <Blob
+        src='/images/svg/home/blue_blob.svg'
+        className='absolute -top-1/4 -z-10'
+      />
+    </div>
   )
 }

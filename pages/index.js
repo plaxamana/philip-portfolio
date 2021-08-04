@@ -8,7 +8,7 @@ export default function Home() {
       <div className='absolute flex justify-between w-full -mt-32 -z-10 sm:-mt-60 xl:-top-1/4'>
         <Blob
           src='/images/svg/home/orange_blob.svg'
-          className='absolute left-0 w-1/2 max-w-4xl -mt-8 -ml-8 sm:-ml-36 lg:-mt-24 lg:-ml-60 xl:-ml-96'
+          className='absolute left-0 w-1/2 max-w-4xl -ml-8 sm:-ml-36 lg:-mt-24 lg:-ml-60 xl:-ml-96'
         />
         <Blob
           src='/images/svg/home/yellow_blob.svg'
