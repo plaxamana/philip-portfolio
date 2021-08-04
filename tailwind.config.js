@@ -6,7 +6,7 @@ module.exports = {
   mode: 'jit',
   theme: {
     screens: {
-      'xs': '475px',
+      xs: '475px',
       ...defaultTheme.screens,
     },
     extend: {
@@ -14,7 +14,7 @@ module.exports = {
         '-10': '-10',
         '-20': '-20',
         '-30': '-30',
-      }
+      },
     },
   },
   variants: {
