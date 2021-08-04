@@ -1,8 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
-import { FiGithub, FiLinkedin, FiTwitter, FiInstagram} from 'react-icons/fi'
-import Link from 'next/link'
+import { FiGithub, FiLinkedin, FiTwitter, FiInstagram } from 'react-icons/fi'
 
 export default function AboutMeHome() {
+  const socials = [
+    { name: 'github', href: 'https://github.com/plaxamana' },
+    { name: 'linkedin', href: 'https://linkedin.com/in/plaxamana' },
+    { name: 'twitter', href: 'https://twitter.com/_plaxamana' },
+  ]
+
   return (
     <div className='relative'>
       <div className='container px-4 py-32 mx-auto'>
@@ -13,7 +18,7 @@ export default function AboutMeHome() {
             className='w-1/2 md:w-1/4 md:order-last'
           />
           <div className='flex flex-col items-center max-w-xl space-y-6 text-lg text-center md:text-left md:items-start md:mr-12'>
-            <p className='text-3xl font-black'>So, who am I?</p>
+            <h2 className='text-3xl font-black'>So, who am I?</h2>
             <p>
               I am a fullstack developer with UI/UX Design skills. I started my
               journey into software development about 6 years ago when I first
@@ -29,38 +34,49 @@ export default function AboutMeHome() {
               where I’ve been.
             </p>
             <div className='flex space-x-4'>
-              <SocialLink name='github' href='#'/>
-              <SocialLink name='linkedin' href='#'/>
-              <SocialLink name='twitter' href='#'/>
-              <SocialLink name='instagram' href='#'/>
+              {socials.map(({ name, href }) => (
+                <SocialLink name={name} href={href} key={name} />
+              ))}
             </div>
           </div>
         </div>
       </div>
-      <div className='absolute w-full -top-1/4 -z-10'>
-        <img src='/images/svg/home/yellow_divider.svg' alt='Yellow divider' className='w-full' />
+      <div className='absolute top-0 w-full lg:-top-1/4 -z-10'>
+        <img
+          src='/images/svg/home/yellow_divider.svg'
+          alt='Yellow divider'
+          className='w-full'
+        />
       </div>
     </div>
   )
 }
 
-const SocialLink = ({href, name}) => {
-  switch(name) {
+const SocialLink = ({ href, name }) => {
+  switch (name) {
     case 'github':
       return (
-        <a href={href} className='hover:text-blue-500'><FiGithub /></a>
+        <a target='a_blank' href={href} className='hover:text-blue-500'>
+          <FiGithub />
+        </a>
       )
     case 'linkedin':
       return (
-        <a href={href} className='hover:text-blue-500'><FiLinkedin /></a>
+        <a target='a_blank' href={href} className='hover:text-blue-500'>
+          <FiLinkedin />
+        </a>
       )
     case 'twitter':
       return (
-        <a href={href} className='hover:text-blue-500'><FiTwitter /></a>
+        <a target='a_blank' href={href} className='hover:text-blue-500'>
+          <FiTwitter />
+        </a>
       )
     case 'instagram':
       return (
-        <a href={href} className='hover:text-blue-500'><FiInstagram /></a>
+        <a target='a_blank' href={href} className='hover:text-blue-500'>
+          <FiInstagram />
+        </a>
       )
   }
 }

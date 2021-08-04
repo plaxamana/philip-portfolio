@@ -2,8 +2,8 @@ import Header from '../components/Header'
 import Hero from '../components/Hero'
 import Blob from '../components/Blob'
 import PageLayout from '../components/PageLayout'
-import Footer from '../components/Footer'
 import AboutMeHome from '../components/AboutMeHome'
+import FeaturedWork from '../components/FeaturedWork'
 
 export default function Home() {
   return (
@@ -22,6 +22,7 @@ export default function Home() {
         <Header />
         <Hero />
         <AboutMeHome />
+        <FeaturedWork />
       </div>
     </PageLayout>
   )
