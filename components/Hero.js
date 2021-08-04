@@ -7,7 +7,7 @@ export default function Hero() {
   return (
     <section>
       <div className='max-w-2xl mx-auto text-center pt-60'>
-        <p className='text-md sm:text-2xl'>Hi, I&apos;m Philip</p>
+        <p className='text-lg sm:text-2xl'>Hi, I&apos;m Philip</p>
         <h1 className='text-4xl font-black leading-none sm:text-6xl'>
           I create beautiful websites that make the internet look great
         </h1>
@@ -33,7 +33,7 @@ export default function Hero() {
 
 const HeroImage = () => {
   return (
-    <div className='relative flex justify-center h-full p-4 mt-24 lg:mt-32'>
+    <div className='relative flex justify-center h-full p-4 mt-24 mb-60 lg:mt-32'>
       <Image
         src='/images/svg/home/coding_illustration.svg'
         alt='Illustration of a man coding'

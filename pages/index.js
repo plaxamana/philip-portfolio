@@ -3,6 +3,7 @@ import Hero from '../components/Hero'
 import Blob from '../components/Blob'
 import PageLayout from '../components/PageLayout'
 import Footer from '../components/Footer'
+import AboutMeHome from '../components/AboutMeHome'
 
 export default function Home() {
   return (
@@ -20,7 +21,7 @@ export default function Home() {
         </div>
         <Header />
         <Hero />
-        <Footer />
+        <AboutMeHome />
       </div>
     </PageLayout>
   )
