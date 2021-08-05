@@ -10,14 +10,14 @@ export default function Home() {
   return (
     <PageLayout>
       <div className='relative overflow-hidden'>
-        <div className='absolute flex justify-between w-full -mt-32 -z-10 sm:-mt-60 xl:-top-1/4'>
+        <div className='absolute flex justify-between w-full -mt-32 -z-10 sm:-mt-60'>
           <Blob
             src='/images/svg/home/orange_blob.svg'
-            className='absolute left-0 w-1/2 max-w-4xl -ml-8 transform rotate-12 sm:-ml-36 lg:-mt-24 lg:-ml-60 xl:mt-24'
+            className='absolute left-0 w-1/2 max-w-4xl -ml-8 transform rotate-12 sm:-ml-36 lg:-mt-24 lg:-ml-60 xl:-mt-96'
           />
           <Blob
             src='/images/svg/home/yellow_blob.svg'
-            className='absolute right-0 w-1/2 max-w-4xl -mr-12 transform sm:-mr-36 lg:-mt-24 xl:mt-32 xl:-mr-12 xl:-rotate-45'
+            className='absolute right-0 w-1/2 max-w-4xl -mr-12 transform sm:-mr-36 xl:-rotate-45 xl:-mt-96'
           />
         </div>
         <Header />
@@ -31,7 +31,7 @@ export default function Home() {
               src='/images/svg/home/orange_left_side.svg'
               className='w-1/5'
             />
-            <Blob src='/images/svg/home/yellow_blob.svg' className='w-1/4 -mb-96' />
+            <Blob src='/images/svg/home/yellow_blob.svg' className='hidden w-1/4 md:block -mb-96' />
             <Blob
               src='/images/svg/home/blue_right_side.svg'
               className='w-1/5'
