@@ -4,6 +4,7 @@ import Blob from '@/components/Blob'
 import PageLayout from '@/components/PageLayout'
 import AboutMeHome from '@/components/AboutMeHome'
 import FeaturedWork from '@/components/FeaturedWork'
+import MySkills from '@/components/MySkills'
 
 export default function Home() {
   return (
@@ -23,6 +24,20 @@ export default function Home() {
         <Hero />
         <AboutMeHome />
         <FeaturedWork />
+        <div className='relative'>
+          <MySkills />
+          <div className='absolute top-0 flex justify-between w-full -z-10'>
+            <Blob
+              src='/images/svg/home/orange_left_side.svg'
+              className='w-1/5'
+            />
+            <Blob src='/images/svg/home/yellow_blob.svg' className='w-1/4 -mb-96' />
+            <Blob
+              src='/images/svg/home/blue_right_side.svg'
+              className='w-1/5'
+            />
+          </div>
+        </div>
       </div>
     </PageLayout>
   )
