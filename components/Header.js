@@ -1,7 +1,7 @@
 import { FiMenu, FiX } from 'react-icons/fi'
 import { useState } from 'react'
-import MobileLink from './MobileLink'
-import NavLink from './NavLink'
+import MobileLink from '@/components/MobileLink'
+import NavLink from '@/components/NavLink'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)

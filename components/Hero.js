@@ -1,7 +1,7 @@
-import Link from 'next/link'
 import Image from 'next/image'
-import { FiEye, FiDownload } from 'react-icons/fi'
-import Blob from './Blob'
+import Blob from '@/components/Blob'
+import Button from '@/components/Button'
+import illustration from '@/images/svg/home/coding_illustration.svg'
 
 export default function Hero() {
   return (
@@ -12,19 +12,14 @@ export default function Hero() {
           I create beautiful websites that make the internet look great
         </h1>
       </div>
-      <div className='flex flex-col items-center mt-12 md:flex-row md:justify-center'>
-        <a
-          href='/Philip_Laxamana_Resume.pdf'
-          target='a_blank'
-          className='relative flex items-center justify-center px-6 py-4 bg-yellow-300 border-4 border-black'
-        >
-          <FiDownload className='w-6 h-6 mr-2' /> Download Resume
-        </a>
-        <Link href='#'>
-          <a className='flex items-center justify-center px-6 py-4'>
-            <FiEye className='w-6 h-6 mr-2' /> View My Work
-          </a>
-        </Link>
+      <div className='flex flex-col items-center mt-12 md:flex-row md:justify-center md:space-x-6'>
+        <Button
+          type='primary'
+          href='../Philip_Laxamana_Resume.pdf'
+          caption='Download Resume'
+          icon='download'
+        />
+        <Button caption='View My Work' href='#' />
       </div>
       <HeroImage />
     </section>
@@ -35,7 +30,7 @@ const HeroImage = () => {
   return (
     <div className='relative flex justify-center h-full p-4 mt-24 mb-60 lg:mt-32'>
       <Image
-        src='/images/svg/home/coding_illustration.svg'
+        src={illustration}
         alt='Illustration of a man coding'
         width={560}
         height={447}

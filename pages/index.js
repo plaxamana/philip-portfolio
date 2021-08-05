@@ -1,9 +1,9 @@
-import Header from '../components/Header'
-import Hero from '../components/Hero'
-import Blob from '../components/Blob'
-import PageLayout from '../components/PageLayout'
-import AboutMeHome from '../components/AboutMeHome'
-import FeaturedWork from '../components/FeaturedWork'
+import Header from '@/components/Header'
+import Hero from '@/components/Hero'
+import Blob from '@/components/Blob'
+import PageLayout from '@/components/PageLayout'
+import AboutMeHome from '@/components/AboutMeHome'
+import FeaturedWork from '@/components/FeaturedWork'
 
 export default function Home() {
   return (
@@ -12,11 +12,11 @@ export default function Home() {
         <div className='absolute flex justify-between w-full -mt-32 -z-10 sm:-mt-60 xl:-top-1/4'>
           <Blob
             src='/images/svg/home/orange_blob.svg'
-            className='absolute left-0 w-1/2 max-w-4xl -ml-8 sm:-ml-36 lg:-mt-24 lg:-ml-60 xl:-ml-96'
+            className='absolute left-0 w-1/2 max-w-4xl -ml-8 transform rotate-12 sm:-ml-36 lg:-mt-24 lg:-ml-60 xl:mt-24'
           />
           <Blob
             src='/images/svg/home/yellow_blob.svg'
-            className='absolute right-0 w-1/2 max-w-4xl -mr-12 sm:-mr-36 lg:-mt-24 xl:-mr-60'
+            className='absolute right-0 w-1/2 max-w-4xl -mr-12 transform sm:-mr-36 lg:-mt-24 xl:mt-32 xl:-mr-12 xl:-rotate-45'
           />
         </div>
         <Header />

@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Footer from './Footer'
+import Footer from '@/components/Footer'
 
 export default function PageLayout({ children, title, description, keywords }) {
   return (
