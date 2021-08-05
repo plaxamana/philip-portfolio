@@ -17,6 +17,7 @@ export default function FeaturedWork() {
           <PortfolioPiece />
           <PortfolioPiece />
         </div>
+        <Button caption='See More Work' href='#' className="mx-auto transition-all duration-300 transform border-4 border-black max-w-max hover:-translate-y-4 hover:bg-yellow-300 hover:shadow-xl" />
       </div>
     </div>
   )
