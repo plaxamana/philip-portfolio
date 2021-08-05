@@ -17,7 +17,7 @@ export default function AboutMeHome() {
             alt='Photo of Philip'
             className='w-1/2 md:w-1/4 md:order-last'
           />
-          <div className='flex flex-col items-center max-w-xl space-y-6 text-lg text-center md:text-left md:items-start md:mr-12'>
+          <div className='flex flex-col items-center max-w-xl mt-8 space-y-6 text-lg text-center md:mt-0 md:text-left md:items-start md:mr-12'>
             <h2 className='text-3xl font-black'>So, who am I?</h2>
             <p>
               I am a fullstack developer with UI/UX Design skills. I started my
