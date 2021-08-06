@@ -15,7 +15,7 @@ export default function Button({
       <a
         href={href}
         target={target}
-        className={`flex items-center justify-center px-6 py-4 duration-300 transform translate-x-4 -translate-y-4 bg-yellow-300 border-4 border-black hover:translate-y-0 hover:translate-x-0 ${
+        className={`flex items-center justify-center px-6 py-4 duration-300 transform translate-x-2 -translate-y-2 bg-yellow-300 border-4 border-black hover:translate-y-0 hover:translate-x-0 ${
           className && className
         }`}
       >

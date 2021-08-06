@@ -47,7 +47,7 @@ export default function PortfolioItemPage() {
             </div>
           </div>
           {/* buttons */}
-          <div className='md:flex md:items-center md:space-x-12'>
+          <div className='md:flex md:flex-col lg:flex-row lg:space-x-4'>
             <Button
               icon='globe'
               href='https://plaxamana.github.io/drone_racing/'
