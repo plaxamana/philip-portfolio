@@ -36,7 +36,7 @@ export default function AboutPage() {
                 application development. To me, it was the perfect mix between
                 solving problems logically, and applying a bit of art design.
                 Since then, I’ve been always learning about different ways to
-                build my projects and how to make them both usuable and
+                build my projects and how to make them both usable and
                 aesthetic.
               </p>
               <p>
