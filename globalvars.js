@@ -6,7 +6,7 @@ export const socials = [
 
 export const pages = [
   { to: 'Home', href: '/' },
-  { to: 'Portfolio', href: '#' },
+  { to: 'Portfolio', href: '/portfolio' },
   { to: 'About', href: '/about' },
   { to: 'Blog', href: '#' },
   { to: 'Contact Me', href: '#' },

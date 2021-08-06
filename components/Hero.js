@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Blob from '@/components/Blob'
 import Button from '@/components/Button'
 import illustration from '@/images/svg/home/coding_illustration.svg'
+import { pages } from '../globalvars'
 
 export default function Hero() {
   return (
@@ -19,7 +20,7 @@ export default function Hero() {
           caption='Download Resume'
           icon='download'
         />
-        <Button caption='View My Work' href='#' />
+        <Button caption='View My Work' href={pages[1].href} />
       </div>
       <HeroImage />
     </section>
