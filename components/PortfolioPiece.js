@@ -15,7 +15,7 @@ const PortfolioPiece = () => {
           </div>
           <Button
             caption='View project'
-            href='#'
+            href='/portfolio/item'
             type='primary'
             className='w-3/4 mx-auto'
             isProject={true}

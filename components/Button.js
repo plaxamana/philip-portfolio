@@ -1,4 +1,4 @@
-import { FiDownload, FiEye } from 'react-icons/fi'
+import { FiDownload, FiEye, FiGlobe } from 'react-icons/fi'
 import Link from 'next/link'
 
 export default function Button({
@@ -21,8 +21,10 @@ export default function Button({
       >
         {icon === 'download' ? (
           <FiDownload className='w-6 h-6 mr-2' />
-        ) : (
+        ) : icon === 'eye' ? (
           <FiEye className='w-6 h-6 mr-2' />
+        ) : (
+          <FiGlobe className='w-6 h-6 mr-2' />
         )}{' '}
         {caption}
       </a>
