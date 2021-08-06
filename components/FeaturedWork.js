@@ -12,7 +12,7 @@ export default function FeaturedWork() {
             Here are a few pieces of my work which I&apos;m really proud of
           </p>
         </div>
-        <div className='flex flex-col items-center py-16 pl-8 space-y-4 md:pl-0 md:py-32 md:flex-row md:justify-between md:space-x-4 md:space-y-0'>
+        <div className='flex flex-col items-center py-16 pl-8 mb-16 space-y-32 md:mb-0 md:pl-0 md:py-32 md:flex-row md:justify-between md:space-y-0'>
           <PortfolioPiece />
           <PortfolioPiece />
           <PortfolioPiece />
@@ -26,7 +26,7 @@ export default function FeaturedWork() {
 const PortfolioPiece = () => {
   return (
     <div className='relative w-4/5 lg:w-1/4'>
-      <div className='relative transition-all duration-300 transform shadow-2xl hover:shadow hover:translate-y-8 hover:-translate-x-8'>
+      <div className='relative transition-all duration-300 transform translate-x-4 -translate-y-4 shadow-2xl hover:translate-x-0 hover:translate-y-0 hover:shadow'>
         {/* overlay image */}
         <div className='absolute inset-0 z-10 w-full h-full transition-all duration-300 transform bg-black opacity-0 cursor-pointer hover:opacity-100'>
           <div className='flex flex-col py-8'>
@@ -52,7 +52,7 @@ const PortfolioPiece = () => {
           objectFit='cover'
         />
       </div>
-      <div className='absolute bottom-0 left-0 w-full h-full -mb-8 -ml-8 border-4 border-black -z-10'></div>
+      <div className='absolute bottom-0 left-0 w-full h-full border-4 border-black -z-10'></div>
     </div>
   )
 }
