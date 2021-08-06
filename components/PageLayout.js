@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Footer from '@/components/Footer'
 
 export default function PageLayout({ children, title, description, keywords }) {
   return (
@@ -10,7 +9,6 @@ export default function PageLayout({ children, title, description, keywords }) {
         <meta keywords={keywords} />
       </Head>
       {children}
-      <Footer />
     </div>
   )
 }

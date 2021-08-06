@@ -5,8 +5,8 @@ export default function ContactMe() {
   return (
     <div className={`relative ${styles.contact}`}>
       <div className='container mx-auto'>
-        <div className='py-32'>
-          <div className='pt-16 pb-8 text-center'>
+        <div className='pt-32 pb-16 xl:pb-48'>
+          <div className='pt-24 pb-8 text-center'>
             <p className='mb-2 text-3xl font-black'>
               Say hello! Shoot me a line below.
             </p>
