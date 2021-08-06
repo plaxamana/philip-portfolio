@@ -30,10 +30,8 @@ export default function Header() {
       </div>
       <div
         className={`${
-          isMenuOpen
-            ? 'block fixed z-20 top-0 right-0 min-h-screen pt-4 w-64 bg-blue-500'
-            : 'hidden'
-        } text-right`}
+          isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+        } transform duration-300 fixed z-20 top-0 right-0 min-h-screen pt-4 w-64 bg-blue-500 text-right`}
       >
         <FiX
           className='w-6 h-6 mb-4 ml-auto mr-6 cursor-pointer'
