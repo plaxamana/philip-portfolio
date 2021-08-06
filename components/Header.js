@@ -2,22 +2,20 @@ import { FiMenu, FiX } from 'react-icons/fi'
 import { useState } from 'react'
 import MobileLink from '@/components/MobileLink'
 import NavLink from '@/components/NavLink'
+import Link from 'next/link'
+import {pages} from '../globalvars'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-
-  const pages = [
-    { to: 'Home', href: '/'},
-    { to: 'Portfolio', href: '#'},
-    { to: 'About', href: '#'},
-    { to: 'Blog', href: '#'},
-    { to: 'Contact Me', href: '#'},
-  ]
   
   return (
-    <nav className='absolute w-full'>
+    <nav className='absolute top-0 left-0 right-0 z-10 w-full'>
       <div className='flex items-center justify-between px-4 mx-auto md:container'>
-        <p className='py-4 font-bold md:text-xl'>Philip Laxamana</p>
+        <Link href='/'>
+          <a>
+            <p className='py-4 font-bold md:text-xl'>Philip Laxamana</p>
+          </a>
+        </Link>
         <FiMenu
           className='w-6 h-6 cursor-pointer md:hidden'
           onClick={() => setIsMenuOpen(!isMenuOpen)}

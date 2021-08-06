@@ -1,12 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
-import { FiGithub, FiLinkedin, FiTwitter, FiInstagram } from 'react-icons/fi'
+import SocialLink from "./SocialLink"
+import {socials} from '../globalvars'
 
 export default function AboutMeHome() {
-  const socials = [
-    { name: 'github', href: 'https://github.com/plaxamana' },
-    { name: 'linkedin', href: 'https://linkedin.com/in/plaxamana' },
-    { name: 'twitter', href: 'https://twitter.com/_plaxamana' },
-  ]
 
   return (
     <div className='relative'>
@@ -50,33 +46,4 @@ export default function AboutMeHome() {
       </div>
     </div>
   )
-}
-
-const SocialLink = ({ href, name }) => {
-  switch (name) {
-    case 'github':
-      return (
-        <a target='a_blank' href={href} className='hover:text-blue-500'>
-          <FiGithub />
-        </a>
-      )
-    case 'linkedin':
-      return (
-        <a target='a_blank' href={href} className='hover:text-blue-500'>
-          <FiLinkedin />
-        </a>
-      )
-    case 'twitter':
-      return (
-        <a target='a_blank' href={href} className='hover:text-blue-500'>
-          <FiTwitter />
-        </a>
-      )
-    case 'instagram':
-      return (
-        <a target='a_blank' href={href} className='hover:text-blue-500'>
-          <FiInstagram />
-        </a>
-      )
-  }
 }
