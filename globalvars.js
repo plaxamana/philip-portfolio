@@ -8,6 +8,6 @@ export const pages = [
   { to: 'Home', href: '/' },
   { to: 'Portfolio', href: '/portfolio' },
   { to: 'About', href: '/about' },
-  { to: 'Blog', href: '#' },
+  { to: 'Blog', href: '/blog' },
   { to: 'Contact Me', href: '#' },
 ]
