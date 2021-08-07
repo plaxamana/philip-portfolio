@@ -72,7 +72,7 @@ const BlogPostCard = ({ imgSrc }) => {
             perferendis quisquam similique? Minus eos eaque quod esse quidem
             deserunt voluptatum asperiores?
           </p>
-          <Link href='#'>
+          <Link href='/blog/post'>
             <a className='inline-block text-blue-500 hover:underline'>
               Read More
             </a>
