@@ -8,6 +8,7 @@
       "@/context/*": ["context/*"],
       "@/helpers/*": ["helpers/*"],
       "@/images/*": ["public/images/*"],
+      "@/lib/*": ["lib/*"],
     }
   }
 }

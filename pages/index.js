@@ -7,8 +7,22 @@ import MySkills from '@/components/MySkills'
 import ContactMe from '@/components/ContactMe'
 import TopBlobs from '@/components/TopBlobs'
 import Footer from '@/components/Footer'
+import { getFeaturedProjects } from '@/lib/api'
+import { useState, useEffect } from 'react'
 
 export default function Home() {
+  const [projects, setProjects] = useState([])
+
+  useEffect(() => {
+    async function getProjects() {
+      const results = await getFeaturedProjects()
+      setProjects(results)
+    }
+    getProjects()
+  },[])
+
+  console.log(projects);
+
   return (
     <PageLayout>
       <div className='relative overflow-hidden'>
@@ -26,12 +40,4 @@ export default function Home() {
       </div>
     </PageLayout>
   )
-}
-
-export async function getStaticProps() {
-
-}
-
-export async function getStaticPaths() {
-  
 }
