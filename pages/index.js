@@ -27,3 +27,11 @@ export default function Home() {
     </PageLayout>
   )
 }
+
+export async function getStaticProps() {
+
+}
+
+export async function getStaticPaths() {
+  
+}
