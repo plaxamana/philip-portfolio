@@ -8,20 +8,8 @@ import ContactMe from '@/components/ContactMe'
 import TopBlobs from '@/components/TopBlobs'
 import Footer from '@/components/Footer'
 import { getFeaturedProjects } from '@/lib/api'
-import { useState, useEffect } from 'react'
 
-export default function Home() {
-  const [projects, setProjects] = useState([])
-
-  useEffect(() => {
-    async function getProjects() {
-      const results = await getFeaturedProjects()
-      setProjects(results)
-    }
-    getProjects()
-  },[])
-
-  console.log(projects);
+export default function Home({projects}) {
 
   return (
     <PageLayout>
@@ -33,11 +21,20 @@ export default function Home() {
         <Header />
         <Hero />
         <AboutMeHome />
-        <FeaturedWork />
+        <FeaturedWork projects={projects}  />
         <MySkills />
         <ContactMe />
         <Footer />
       </div>
     </PageLayout>
   )
+}
+
+export async function getStaticProps() {
+  const projects = await getFeaturedProjects()
+  return {
+    props: {
+      projects,
+    },
+  }
 }

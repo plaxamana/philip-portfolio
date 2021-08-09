@@ -2,8 +2,9 @@ import Header from '@/components/Header'
 import TopBlobs from '@/components/TopBlobs'
 import PortfolioPiece from '@/components/PortfolioPiece'
 import Footer from '@/components/Footer'
+import { getAllProjects } from '@/lib/api'
 
-export default function PortfolioPage() {
+export default function PortfolioPage({ projects }) {
   return (
     <div className='relative overflow-hidden'>
       <TopBlobs
@@ -18,16 +19,36 @@ export default function PortfolioPage() {
             <p>Well, here you go. Take a look below.</p>
           </div>
           <div className='grid grid-cols-1 mt-32 gap-y-16 md:grid-cols-2 xl:grid-cols-3'>
-            <PortfolioPiece />
-            <PortfolioPiece />
-            <PortfolioPiece />
-            <PortfolioPiece />
-            <PortfolioPiece />
-            <PortfolioPiece />
+            {projects.map(
+              ({
+                _id,
+                title,
+                slug: { current },
+                previewImage: {
+                  asset: { url },
+                },
+              }) => (
+                <PortfolioPiece
+                  key={_id}
+                  title={title}
+                  url={url}
+                  current={current}
+                />
+              ),
+            )}
           </div>
         </div>
       </div>
       <Footer />
     </div>
   )
+}
+
+export async function getStaticProps() {
+  const projects = await getAllProjects()
+  return {
+    props: {
+      projects,
+    },
+  }
 }
