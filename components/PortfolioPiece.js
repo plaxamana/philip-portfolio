@@ -1,7 +1,7 @@
 import Button from './Button'
 import Image from 'next/image'
 
-const PortfolioPiece = ({ title, current, url }) => {
+const PortfolioPiece = ({ title, slug, url }) => {
   return (
     <div className='relative w-4/5 mx-auto md:max-w-md'>
       <div className='transition-all duration-300 transform translate-x-4 -translate-y-4 shadow-2xl hover:translate-x-0 hover:translate-y-0 hover:shadow'>
@@ -13,7 +13,7 @@ const PortfolioPiece = ({ title, current, url }) => {
           </div>
           <Button
             caption='View project'
-            href={`/portfolio/${current}`}
+            href={`/portfolio/${slug}`}
             type='primary'
             className='w-3/4 mx-auto'
             isProject={true}

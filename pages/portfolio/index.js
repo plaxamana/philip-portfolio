@@ -23,16 +23,18 @@ export default function PortfolioPage({ projects }) {
               ({
                 _id,
                 title,
-                slug: { current },
+                slug,
                 previewImage: {
-                  asset: { url },
+                  alt,
+                  url
                 },
               }) => (
                 <PortfolioPiece
                   key={_id}
                   title={title}
                   url={url}
-                  current={current}
+                  slug={slug}
+                  alt={alt}
                 />
               ),
             )}

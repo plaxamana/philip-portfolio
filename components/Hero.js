@@ -19,7 +19,7 @@ export default function Hero() {
           href='../Philip_Laxamana_Resume.pdf'
           caption='Download Resume'
           icon='download'
-          target="_blank"
+          target='_blank'
         />
         <Button caption='View My Work' href={pages[1].href} />
       </div>

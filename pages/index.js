@@ -7,10 +7,9 @@ import MySkills from '@/components/MySkills'
 import ContactMe from '@/components/ContactMe'
 import TopBlobs from '@/components/TopBlobs'
 import Footer from '@/components/Footer'
-import { getFeaturedProjects } from '@/lib/api'
+import { getFeaturedProjects, getProjectBySlug } from '@/lib/api'
 
 export default function Home({projects}) {
-
   return (
     <PageLayout>
       <div className='relative overflow-hidden'>
