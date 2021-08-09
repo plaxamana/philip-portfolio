@@ -7,7 +7,10 @@ import Badge from '@/components/Badge'
 import { getAllProjects, getProjectBySlug } from '@/lib/api'
 import BlockContent from '@sanity/block-content-to-react'
 
-export default function PortfolioItemPage({ project }) {
+// export default function BlogPost({ post, guide, quote, cat }: Props) {
+//   if (!post) return <div />; // fix for during the npm run build to generate static pages
+
+export default function PortfolioItemPage({ project: { title, body, categories, liveSite, codeRepo, mainImage} }) {
   return (
     <div className='relative min-h-screen overflow-hidden'>
       <TopBlobs
@@ -19,15 +22,15 @@ export default function PortfolioItemPage({ project }) {
         <div className='grid grid-cols-1 gap-y-16 md:grid-cols-2 md:gap-x-4 lg:gap-x-16 md:mb-16'>
           {/* Project Info */}
           <div className='space-y-4 text-lg'>
-            <h2 className='text-3xl font-bold'>{project.title}</h2>
+            <h2 className='text-3xl font-bold'>{title}</h2>
             <div className='prose-lg'>
-              <BlockContent blocks={project.body} />
+              <BlockContent blocks={body} />
             </div>
             {/* Badges */}
             <div className='pb-8'>
               <p className='mb-2 font-bold'>Developed with:</p>
               <div className='flex flex-wrap space-x-2'>
-                {project.categories.map(({ classNames, title }) => (
+                {categories.map(({ classNames, title }) => (
                   <Badge
                     key={title}
                     title={title}
@@ -40,14 +43,14 @@ export default function PortfolioItemPage({ project }) {
             <div className='md:flex md:flex-col lg:flex-row lg:space-x-4'>
               <Button
                 icon='globe'
-                href={project.liveSite}
+                href={liveSite}
                 type='primary'
                 caption='View Live Site'
                 target='_blank'
               />
               <Button
                 icon='eye'
-                href={project.codeRepo}
+                href={codeRepo}
                 caption='View Source Code'
                 target='_blank'
               />
@@ -56,8 +59,8 @@ export default function PortfolioItemPage({ project }) {
           {/* Project image */}
           <div className='order-first md:order-last'>
             <Image
-              src={project.mainImage.url}
-              alt='project image'
+              src={mainImage.url}
+              alt={mainImage.alt}
               layout='responsive'
               height={470}
               width={586}
