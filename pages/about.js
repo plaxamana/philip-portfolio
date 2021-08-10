@@ -10,7 +10,6 @@ import BlockContent from '@sanity/block-content-to-react'
 import { getAuthor } from '@/lib/api'
 
 export default function AboutPage({ author }) {
-  console.log(author)
   return (
     <PageLayout title='About Me | Philip Laxamana | Software Engineer'>
       <div className='relative'>
