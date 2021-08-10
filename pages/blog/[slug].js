@@ -8,7 +8,9 @@ import { getAllPosts, getPostBySlug } from '@/lib/api'
 import { options } from '../../globalvars'
 import BlockContent from '@sanity/block-content-to-react'
 
-export default function BlogPostPage({post}) {
+export default function BlogPostPage({ post }) {
+  if (!post) return <div />
+
   return (
     <div className='relative min-h-screen overflow-hidden'>
       <div className='absolute top-0 left-0 right-0 flex justify-between w-full'>
@@ -23,10 +25,11 @@ export default function BlogPostPage({post}) {
       <div className='px-4 py-32 lg:py-52'>
         <div className='container mx-auto'>
           <div className='mb-16 text-center'>
-            <p className='mb-2 text-5xl font-black'>
-              {post.title}
+            <p className='mb-2 text-5xl font-black'>{post.title}</p>
+            <p className='font-medium'>
+              Posted on{' '}
+              {new Date(post.publishedAt).toLocaleDateString('en-US', options)}
             </p>
-            <p className='font-medium'>Posted on {new Date(post.publishedAt).toLocaleDateString('en-US', options)}</p>
           </div>
           <div className='max-w-5xl mx-auto mb-16'>
             <Image
@@ -68,11 +71,11 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params: { slug } }) {
   const post = await getPostBySlug(slug)
-  
+
   return {
     props: {
-      post
+      post,
     },
-    revalidate: 1
+    revalidate: 1,
   }
 }
