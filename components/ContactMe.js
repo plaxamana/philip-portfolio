@@ -3,7 +3,7 @@ import styles from '@/styles/ContactMe.module.css'
 
 export default function ContactMe() {
   return (
-    <div className={`relative ${styles.contact}`} id='#contact'>
+    <div className={`relative ${styles.contact}`} id='contact'>
       <div className='container mx-auto'>
         <div className='pt-32 pb-16 xl:pb-48'>
           <div className='pt-24 pb-8 text-center'>

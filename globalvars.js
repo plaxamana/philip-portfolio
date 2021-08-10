@@ -9,7 +9,7 @@ export const pages = [
   { to: 'Portfolio', href: '/portfolio' },
   { to: 'About', href: '/about' },
   { to: 'Blog', href: '/blog' },
-  { to: 'Contact Me', href: '#' },
+  { to: 'Contact Me', href: '/#contact' },
 ]
 
 export const options = {
