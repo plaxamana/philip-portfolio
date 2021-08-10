@@ -37,7 +37,7 @@ export default function AboutMeHome() {
           </div>
         </div>
       </div>
-      <div className='absolute top-0 w-full lg:-top-1/4 -z-10'>
+      <div className='absolute top-0 w-full lg:-top-1/4 md:-mt-40 lg:block lg:mt-32 xl:mt-0 -z-20'>
         <img
           src='/images/svg/home/yellow_divider.svg'
           alt='Yellow divider'

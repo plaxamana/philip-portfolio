@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 const PortfolioPiece = ({ title, slug, url }) => {
   return (
-    <div className='relative w-4/5 mx-auto md:max-w-md'>
+    <div className='relative w-4/5 mx-auto md:max-w-md md:mx-4 2xl:mx-0'>
       <div className='transition-all duration-300 transform translate-x-4 -translate-y-4 shadow-2xl hover:translate-x-0 hover:translate-y-0 hover:shadow'>
         <div className='absolute inset-0 z-10 w-full h-full transition-all duration-300 transform bg-black opacity-0 cursor-pointer hover:opacity-100'>
           <div className='flex flex-col items-center py-8'>

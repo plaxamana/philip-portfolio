@@ -7,7 +7,11 @@ import Badge from '@/components/Badge'
 import { getAllProjects, getProjectBySlug } from '@/lib/api'
 import BlockContent from '@sanity/block-content-to-react'
 
+// export default function BlogPost({ post, guide, quote, cat }: Props) {
+//   if (!post) return <div />; // fix for during the npm run build to generate static pages
+
 export default function PortfolioItemPage({ project }) {
+  if (!project) return <div />
   return (
     <div className='relative min-h-screen overflow-hidden'>
       <TopBlobs
@@ -57,7 +61,7 @@ export default function PortfolioItemPage({ project }) {
           <div className='order-first md:order-last'>
             <Image
               src={project.mainImage.url}
-              alt='project image'
+              alt={project.mainImage.alt}
               layout='responsive'
               height={470}
               width={586}
