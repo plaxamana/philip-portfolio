@@ -7,11 +7,9 @@ import Badge from '@/components/Badge'
 import { getAllProjects, getProjectBySlug } from '@/lib/api'
 import BlockContent from '@sanity/block-content-to-react'
 
-// export default function BlogPost({ post, guide, quote, cat }: Props) {
-//   if (!post) return <div />; // fix for during the npm run build to generate static pages
-
 export default function PortfolioItemPage({ project }) {
   if (!project) return <div />
+
   return (
     <div className='relative min-h-screen overflow-hidden'>
       <TopBlobs
@@ -31,12 +29,8 @@ export default function PortfolioItemPage({ project }) {
             <div className='pb-8'>
               <p className='mb-2 font-bold'>Developed with:</p>
               <div className='flex flex-wrap space-x-2'>
-                {project.categories.map(({ classNames, title }) => (
-                  <Badge
-                    key={title}
-                    title={title}
-                    classNames={`${classNames} mb-4 flex-auto`}
-                  />
+                {project.categories.map(({ title }) => (
+                  <Badge key={title} title={title} />
                 ))}
               </div>
             </div>
