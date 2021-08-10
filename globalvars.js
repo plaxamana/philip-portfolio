@@ -11,3 +11,10 @@ export const pages = [
   { to: 'Blog', href: '/blog' },
   { to: 'Contact Me', href: '#' },
 ]
+
+export const options = {
+  weekday: 'long',
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+}

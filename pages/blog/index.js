@@ -6,10 +6,11 @@ import developer from '@/images/blogpage/developer1.jpg'
 import do_great from '@/images/blogpage/do_great.jpg'
 import do_more from '@/images/blogpage/do_more.jpg'
 import wavy_divider from '@/images/svg/blog/wavy_divider_bottom.svg'
-import Link from 'next/link'
 import Footer from '@/components/Footer'
+import BlogPostCard from '@/components/BlogPostCard'
+import { getAllPosts } from '@/lib/api'
 
-export default function BlogPage() {
+export default function BlogPage({posts}) {
   return (
     <div className='relative min-h-screen overflow-hidden'>
       <div className='absolute top-0 left-0 right-0 flex justify-between w-full'>
@@ -28,9 +29,9 @@ export default function BlogPage() {
             <p>Welcome to my blog posts page!</p>
           </div>
           <div className='grid justify-center gap-y-12 md:gap-x-16 md:grid-cols-2 xl:grid-cols-3 lg:gap-16'>
-            <BlogPostCard imgSrc={developer} />
-            <BlogPostCard imgSrc={do_more} />
-            <BlogPostCard imgSrc={do_great} />
+            {posts.map(post => (
+              <BlogPostCard key={post._id} imgSrc={post.mainImage.url} imgAlt={post.mainImage.alt} slug={post.slug} excerpt={post.excerpt} title={post.title} date={post.publishedAt} />
+            ))}
           </div>
         </div>
       </div>
@@ -44,42 +45,12 @@ export default function BlogPage() {
   )
 }
 
-const BlogPostCard = ({ imgSrc }) => {
-  return (
-    <div className='relative'>
-      <div className='flex flex-col justify-between max-w-lg transition-all duration-300 transform bg-white shadow-2xl md:translate-x-4 md:-translate-y-4 hover:translate-y-0 hover:translate-x-0'>
-        {/* Image container */}
-        <div className='w-full'>
-          <Image
-            src={imgSrc}
-            alt='developer'
-            layout='responsive'
-            objectFit='cover'
-            height={300}
-          />
-        </div>
-        {/* Post body */}
-        <div className='p-4 space-y-4'>
-          <div className='mb-4 text-sm'>
-            <p className='mb-1 text-lg font-bold'>
-              How To Be Great at Developing
-            </p>
-            <p>07/24/2021</p>
-          </div>
-          <p className='leading-relaxed'>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
-            reprehenderit minus quos necessitatibus rerum ipsam voluptas sint
-            perferendis quisquam similique? Minus eos eaque quod esse quidem
-            deserunt voluptatum asperiores?
-          </p>
-          <Link href='/blog/post'>
-            <a className='inline-block text-blue-500 hover:underline'>
-              Read More
-            </a>
-          </Link>
-        </div>
-      </div>
-      <div className='absolute inset-0 hidden w-full h-full border-4 border-black md:block -z-10'></div>
-    </div>
-  )
+export async function getStaticProps() {
+  const posts = await getAllPosts()
+
+  return {
+    props: {
+      posts
+    }
+  }
 }
