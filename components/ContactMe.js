@@ -58,7 +58,14 @@ export default function ContactMe() {
   )
 }
 
-const InputGroup = ({ _for, type, label, className, textArea, placeholder }) => {
+const InputGroup = ({
+  _for,
+  type,
+  label,
+  className,
+  textArea,
+  placeholder,
+}) => {
   return textArea ? (
     <div className={`flex flex-col space-y-2 ${className}`}>
       <label htmlFor={_for} className='font-medium'>

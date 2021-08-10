@@ -2,15 +2,12 @@ import Header from '@/components/Header'
 import Image from 'next/image'
 import topLeft from '@/images/svg/blog/top_left_blob.svg'
 import topRight from '@/images/svg/blog/top_right_blob.svg'
-import developer from '@/images/blogpage/developer1.jpg'
-import do_great from '@/images/blogpage/do_great.jpg'
-import do_more from '@/images/blogpage/do_more.jpg'
 import wavy_divider from '@/images/svg/blog/wavy_divider_bottom.svg'
 import Footer from '@/components/Footer'
 import BlogPostCard from '@/components/BlogPostCard'
 import { getAllPosts } from '@/lib/api'
 
-export default function BlogPage({posts}) {
+export default function BlogPage({ posts }) {
   return (
     <div className='relative min-h-screen overflow-hidden'>
       <div className='absolute top-0 left-0 right-0 flex justify-between w-full'>
@@ -29,8 +26,16 @@ export default function BlogPage({posts}) {
             <p>Welcome to my blog posts page!</p>
           </div>
           <div className='grid justify-center gap-y-12 md:gap-x-16 md:grid-cols-2 xl:grid-cols-3 lg:gap-16'>
-            {posts.map(post => (
-              <BlogPostCard key={post._id} imgSrc={post.mainImage.url} imgAlt={post.mainImage.alt} slug={post.slug} excerpt={post.excerpt} title={post.title} date={post.publishedAt} />
+            {posts.map((post) => (
+              <BlogPostCard
+                key={post._id}
+                imgSrc={post.mainImage.url}
+                imgAlt={post.mainImage.alt}
+                slug={post.slug}
+                excerpt={post.excerpt}
+                title={post.title}
+                date={post.publishedAt}
+              />
             ))}
           </div>
         </div>
@@ -50,7 +55,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      posts
-    }
+      posts,
+    },
   }
 }

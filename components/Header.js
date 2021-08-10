@@ -3,11 +3,11 @@ import { useState } from 'react'
 import MobileLink from '@/components/MobileLink'
 import NavLink from '@/components/NavLink'
 import Link from 'next/link'
-import {pages} from '../globalvars'
+import { pages } from '../globalvars'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  
+
   return (
     <nav className='absolute top-0 left-0 right-0 z-10 w-full'>
       <div className='flex items-center justify-between px-4 mx-auto md:container'>

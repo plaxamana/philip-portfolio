@@ -20,15 +20,7 @@ export default function PortfolioPage({ projects }) {
           </div>
           <div className='grid grid-cols-1 mt-32 gap-y-16 md:grid-cols-2 xl:grid-cols-3'>
             {projects.map(
-              ({
-                _id,
-                title,
-                slug,
-                previewImage: {
-                  alt,
-                  url
-                },
-              }) => (
+              ({ _id, title, slug, previewImage: { alt, url } }) => (
                 <PortfolioPiece
                   key={_id}
                   title={title}

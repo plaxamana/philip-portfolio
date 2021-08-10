@@ -7,9 +7,7 @@ const PortfolioPiece = ({ title, slug, url }) => {
       <div className='transition-all duration-300 transform translate-x-4 -translate-y-4 shadow-2xl hover:translate-x-0 hover:translate-y-0 hover:shadow'>
         <div className='absolute inset-0 z-10 w-full h-full transition-all duration-300 transform bg-black opacity-0 cursor-pointer hover:opacity-100'>
           <div className='flex flex-col items-center py-8'>
-            <p className='mb-2 text-lg font-bold text-white'>
-              {title}
-            </p>
+            <p className='mb-2 text-lg font-bold text-white'>{title}</p>
           </div>
           <Button
             caption='View project'

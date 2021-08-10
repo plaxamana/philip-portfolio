@@ -39,7 +39,7 @@ export default function MySkills() {
   ]
 
   return (
-    <div className="relative">
+    <div className='relative'>
       <div className='px-4 py-16 lg:py-32'>
         <div className='container mx-auto text-center'>
           <div className='flex flex-col items-center space-y-2'>
@@ -54,7 +54,12 @@ export default function MySkills() {
             {/* Feature container */}
             <div className='flex flex-col max-w-xs space-y-4'>
               <div>
-                <Image src={uiux} width={100} height={78} alt='UI Cursor icon' />
+                <Image
+                  src={uiux}
+                  width={100}
+                  height={78}
+                  alt='UI Cursor icon'
+                />
               </div>
               <p className='text-lg font-bold'>UI/UX Design</p>
               <p>
@@ -64,7 +69,12 @@ export default function MySkills() {
             </div>
             <div className='flex flex-col max-w-xs space-y-4'>
               <div>
-                <Image src={fsdev} width={80} height={74} alt='UI Cursor icon' />
+                <Image
+                  src={fsdev}
+                  width={80}
+                  height={74}
+                  alt='UI Cursor icon'
+                />
               </div>
               <p className='text-lg font-bold'>Fullstack Development</p>
               <p>

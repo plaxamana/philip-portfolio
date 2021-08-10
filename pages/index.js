@@ -9,7 +9,7 @@ import TopBlobs from '@/components/TopBlobs'
 import Footer from '@/components/Footer'
 import { getAuthor, getFeaturedProjects, getProjectBySlug } from '@/lib/api'
 
-export default function Home({projects, author}) {
+export default function Home({ projects, author }) {
   return (
     <PageLayout>
       <div className='relative overflow-hidden'>
@@ -20,7 +20,7 @@ export default function Home({projects, author}) {
         <Header />
         <Hero />
         <AboutMeHome author={author} />
-        <FeaturedWork projects={projects}  />
+        <FeaturedWork projects={projects} />
         <MySkills />
         <ContactMe />
         <Footer />
@@ -32,11 +32,11 @@ export default function Home({projects, author}) {
 export async function getStaticProps() {
   const projects = await getFeaturedProjects()
   const author = await getAuthor()
-  
+
   return {
     props: {
       projects,
-      author
+      author,
     },
   }
 }

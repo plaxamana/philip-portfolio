@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prettier": "npx prettier --write ."
   },
   "dependencies": {
     "@sanity/block-content-to-react": "^3.0.0",

@@ -1,6 +1,6 @@
 import Blob from '@/components/Blob'
 
-const TopBlobs = ({blobSrc1, blobSrc2}) => {
+const TopBlobs = ({ blobSrc1, blobSrc2 }) => {
   return (
     <div className='absolute flex justify-between w-full -mt-32 -z-10 sm:-mt-60'>
       <Blob

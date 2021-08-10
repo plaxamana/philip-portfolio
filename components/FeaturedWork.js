@@ -13,19 +13,15 @@ export default function FeaturedWork({ projects }) {
           </p>
         </div>
         <div className='flex flex-col items-center py-16 pl-8 mb-16 space-y-32 md:mb-0 md:pl-0 md:py-32 md:flex-row md:justify-between md:space-y-0'>
-          {projects.map(
-            ({
-              _id,
-              title,
-              slug,
-              previewImage: {
-                alt,
-                url
-              },
-            }) => (
-              <PortfolioPiece key={_id} title={title} url={url} slug={slug} alt={alt} />
-            ),
-          )}
+          {projects.map(({ _id, title, slug, previewImage: { alt, url } }) => (
+            <PortfolioPiece
+              key={_id}
+              title={title}
+              url={url}
+              slug={slug}
+              alt={alt}
+            />
+          ))}
         </div>
         <Button
           caption='See More Work'

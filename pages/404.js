@@ -27,10 +27,12 @@ export default function Page404() {
             <h1 className='text-5xl font-bold text-blue-900'>OOPS!</h1>
             <p>We can&apos;t seem to find the page you&apos;re looking for.</p>
             <p>
-              Return to{" "}
+              Return to{' '}
               <Link href='/'>
                 <a>
-                  <span className='font-bold text-yellow-600 hover:underline'>Home</span>
+                  <span className='font-bold text-yellow-600 hover:underline'>
+                    Home
+                  </span>
                 </a>
               </Link>
             </p>
