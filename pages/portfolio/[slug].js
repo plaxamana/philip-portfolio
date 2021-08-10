@@ -35,7 +35,7 @@ export default function PortfolioItemPage({ project }) {
               </div>
             </div>
             {/* buttons */}
-            <div className='md:flex md:flex-col lg:flex-row lg:space-x-4'>
+            <div className='text-base md:flex md:flex-col lg:flex-row lg:space-x-4'>
               <Button
                 icon='globe'
                 href={project.liveSite}

@@ -36,7 +36,7 @@ export default function Button({
     </div>
   ) : (
     <Link href={href}>
-      <a className={`flex items-center justify-center px-6 py-4 ${className}`}>
+      <a className={`flex items-center justify-center px-6 py-4 hover:underline ${className}`} target={target}>
         {icon === 'download' ? (
           <FiDownload className='w-6 h-6 mr-2' />
         ) : (

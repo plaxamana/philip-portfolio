@@ -33,7 +33,7 @@ function giveStyles(title) {
     case 'DigitalOcean':
       return 'text-blue-900 bg-white border border-blue-900'
     default:
-      return 'bg-gray-900 text-gray-100'
+      return 'bg-gradient-to-r from-blue-700 to-blue-900 text-white'
   }
 }
 
