@@ -7,7 +7,7 @@ import MySkills from '@/components/MySkills'
 import ContactMe from '@/components/ContactMe'
 import TopBlobs from '@/components/TopBlobs'
 import Footer from '@/components/Footer'
-import { getAuthor, getFeaturedProjects, getProjectBySlug } from '@/lib/api'
+import { getAuthor, getFeaturedProjects } from '@/lib/api'
 
 export default function Home({ projects, author }) {
   return (

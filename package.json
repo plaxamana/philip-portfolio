@@ -13,6 +13,7 @@
     "@sanity/block-content-to-react": "^3.0.0",
     "@tailwindcss/typography": "^0.4.1",
     "highlight": "^0.2.4",
+    "highlight.js": "^11.2.0",
     "next": "11.0.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",

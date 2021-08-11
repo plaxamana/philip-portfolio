@@ -6,7 +6,7 @@ import Footer from '@/components/Footer'
 import light_wave from '@/images/svg/blog/blog_post/lightblue_wavy_divider.svg'
 import { getAllPosts, getPostBySlug } from '@/lib/api'
 import { options } from '../../globalvars'
-import BlockContent from '@sanity/block-content-to-react'
+import PostContent from '@/components/PostContent'
 
 export default function BlogPostPage({ post }) {
   if (!post) return <div />
@@ -37,12 +37,12 @@ export default function BlogPostPage({ post }) {
               alt={post.mainImage.alt}
               layout='responsive'
               objectFit='cover'
-              height={600}
+              height={545}
               width={1024}
             />
           </div>
-          <div className='mx-auto prose prose-lg'>
-            <BlockContent blocks={post.body} />
+          <div className='mx-auto prose prose-lg lg:prose-xl'>
+            <PostContent content={post.body}/>
           </div>
         </div>
       </div>
