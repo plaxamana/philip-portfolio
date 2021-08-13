@@ -26,7 +26,9 @@ export default function BlogPage({ posts }) {
             <p>Welcome to my blog posts page!</p>
           </div>
           <div className='grid justify-center gap-y-12 md:gap-x-16 md:grid-cols-2 xl:grid-cols-3 lg:gap-16'>
-            {posts.map((post) => (
+            {!posts.length && <p className='text-2xl font-bold text-center z-100 col-span-full'>No posts found (yet)</p>}
+            {posts &&
+              posts.map((post) => (
               <BlogPostCard
                 key={post._id}
                 imgSrc={post.mainImage.url}
@@ -36,11 +38,12 @@ export default function BlogPage({ posts }) {
                 title={post.title}
                 date={post.publishedAt}
               />
-            ))}
+              )) 
+            }
           </div>
         </div>
       </div>
-      <div className='absolute w-full min-h-screen -bottom-1/4 -z-20'>
+      <div className='absolute w-full min-h-screen -bottom-2/4 -z-20'>
         <div className='w-full -z-10'>
           <Image src={wavy_divider} alt='divider' layout='responsive' />
         </div>
