@@ -3,8 +3,12 @@ import TopBlobs from '@/components/TopBlobs'
 import PortfolioPiece from '@/components/PortfolioPiece'
 import Footer from '@/components/Footer'
 import { getAllProjects } from '@/lib/api'
+import { useGetProjects } from '@/actions/index'
 
-export default function PortfolioPage({ projects }) {
+export default function PortfolioPage({ projects: initialData }) {
+
+  const { data: projects, error } = useGetProjects(initialData)
+
   return (
     <div className='relative overflow-hidden'>
       <TopBlobs

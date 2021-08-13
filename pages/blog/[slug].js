@@ -7,8 +7,9 @@ import light_wave from '@/images/svg/blog/blog_post/lightblue_wavy_divider.svg'
 import { getAllPosts, getPostBySlug } from '@/lib/api'
 import { options } from '../../globalvars'
 import PostContent from '@/components/PostContent'
+import PreviewAlert from '@/components/PreviewAlert'
 
-export default function BlogPostPage({ post }) {
+export default function BlogPostPage({ post, preview }) {
   if (!post) return <div />
 
   return (
@@ -25,6 +26,7 @@ export default function BlogPostPage({ post }) {
       <div className='px-4 py-32 lg:py-52'>
         <div className='container mx-auto'>
           <div className='mb-16 text-center'>
+          { preview && <PreviewAlert />}
             <p className='mb-2 text-5xl font-black'>{post.title}</p>
             <p className='font-medium'>
               Posted on{' '}
@@ -69,12 +71,13 @@ export async function getStaticPaths() {
   }
 }
 
-export async function getStaticProps({ params: { slug } }) {
-  const post = await getPostBySlug(slug)
+export async function getStaticProps({ params: { slug }, preview = false }) {
+  const post = await getPostBySlug(slug, preview)
 
   return {
     props: {
       post,
+      preview
     },
     revalidate: 1,
   }

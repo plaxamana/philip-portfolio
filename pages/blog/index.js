@@ -6,8 +6,12 @@ import wavy_divider from '@/images/svg/blog/wavy_divider_bottom.svg'
 import Footer from '@/components/Footer'
 import BlogPostCard from '@/components/BlogPostCard'
 import { getAllPosts } from '@/lib/api'
+import { useGetPosts } from '@/actions/index'
 
-export default function BlogPage({ posts }) {
+export default function BlogPage({ posts: initialData }) {
+
+  const { data: posts, error } = useGetPosts(initialData)
+
   return (
     <div className='relative min-h-screen overflow-hidden'>
       <div className='absolute top-0 left-0 right-0 flex justify-between w-full'>
