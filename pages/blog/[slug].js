@@ -8,9 +8,21 @@ import { getAllPosts, getPostBySlug } from '@/lib/api'
 import { options } from '../../globalvars'
 import PostContent from '@/components/PostContent'
 import PreviewAlert from '@/components/PreviewAlert'
+import { useRouter } from 'next/router'
+import ErrorPage from 'next/error'
+import PageLayout from '@/components/PageLayout'
 
 export default function BlogPostPage({ post, preview }) {
+  const router = useRouter()
   if (!post) return <div />
+
+  if (!router.isFallback && !blog.slug) {
+    return <ErrorPage statusCode='404' />
+  }
+
+  if (router.isFallback) {
+    return <PageLayout>Loading...</PageLayout>
+  }
 
   return (
     <div className='relative min-h-screen overflow-hidden'>
@@ -26,7 +38,7 @@ export default function BlogPostPage({ post, preview }) {
       <div className='px-4 py-32 lg:py-52'>
         <div className='container mx-auto'>
           <div className='mb-16 text-center'>
-          { preview && <PreviewAlert />}
+            {preview && <PreviewAlert />}
             <p className='mb-2 text-5xl font-black'>{post.title}</p>
             <p className='font-medium'>
               Posted on{' '}
@@ -44,7 +56,7 @@ export default function BlogPostPage({ post, preview }) {
             />
           </div>
           <div className='mx-auto prose prose-lg lg:prose-xl'>
-            <PostContent content={post.body}/>
+            <PostContent content={post.body} />
           </div>
         </div>
       </div>
@@ -67,7 +79,7 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: true,
+    fallback: false,
   }
 }
 
@@ -77,7 +89,7 @@ export async function getStaticProps({ params: { slug }, preview = false }) {
   return {
     props: {
       post,
-      preview
+      preview,
     },
     revalidate: 1,
   }

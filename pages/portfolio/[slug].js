@@ -7,9 +7,21 @@ import Badge from '@/components/Badge'
 import { getAllProjects, getProjectBySlug } from '@/lib/api'
 import BlockContent from '@sanity/block-content-to-react'
 import PreviewAlert from '@/components/PreviewAlert'
+import ErrorPage from 'next/error'
+import { useRouter } from 'next/router'
+import PageLayout from '@/components/PageLayout'
 
 export default function PortfolioItemPage({ project, preview }) {
+  const router = useRouter()
   if (!project) return <div />
+
+  if (!router.isFallback && !project.slug) {
+    return <ErrorPage statusCode='404' />
+  }
+
+  if (router.isFallback) {
+    return <PageLayout>Loading...</PageLayout>
+  }
 
   return (
     <div className='relative min-h-screen overflow-hidden'>
@@ -17,7 +29,7 @@ export default function PortfolioItemPage({ project, preview }) {
         blobSrc1='/images/svg/home/blue_blob.svg'
         blobSrc2='/images/svg/home/yellow_blob.svg'
       />
-      { <PreviewAlert />}
+      {preview && <PreviewAlert />}
       <Header />
       <div className='container px-4 py-32 mx-auto lg:pt-48'>
         <div className='grid grid-cols-1 gap-y-16 md:grid-cols-2 md:gap-x-4 lg:gap-x-16 md:mb-16'>
@@ -77,7 +89,7 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: true,
+    fallback: false,
   }
 }
 
