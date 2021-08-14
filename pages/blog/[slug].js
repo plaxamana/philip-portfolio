@@ -16,13 +16,13 @@ export default function BlogPostPage({ post, preview }) {
   const router = useRouter()
   if (!post) return <div />
 
-  if (!router.isFallback && !blog.slug) {
-    return <ErrorPage statusCode='404' />
-  }
+  // if (!router.isFallback && !blog.slug) {
+  //   return <ErrorPage statusCode='404' />
+  // }
 
-  if (router.isFallback) {
-    return <PageLayout>Loading...</PageLayout>
-  }
+  // if (router.isFallback) {
+  //   return <PageLayout>Loading...</PageLayout>
+  // }
 
   return (
     <div className='relative min-h-screen overflow-hidden'>
