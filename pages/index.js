@@ -15,12 +15,12 @@ export default function Home({ projects, author }) {
   const [closeAlert, setCloseAlert] = useState(false)
   return (
     <PageLayout>
+      <div className='relative overflow-hidden'>
       <Alert
         message='I am available for hire.  Please contact me below'
         closeAlert={closeAlert}
         setCloseAlert={() => setCloseAlert(true)}
       />
-      <div className='relative overflow-hidden'>
         <TopBlobs
           blobSrc1='/images/svg/home/orange_blob.svg'
           blobSrc2='/images/svg/home/yellow_blob.svg'
