@@ -35,3 +35,11 @@ yarn-error.log*
 
 /vscodetest
 .vscode
+
+public/sitemap.xml
+public/robots.txt
+
+public/sw*
+public/workbox*
+
+public/rss.xml
