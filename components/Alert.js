@@ -5,10 +5,10 @@ export default function Alert({ message, closeAlert, setCloseAlert }) {
     <div
       className={`${
         closeAlert ? 'hidden' : null
-      } z-50 absolute top-0 left-0 right-0 flex items-center justify-center w-full p-4 mx-auto text-lg text-center text-white bg-blue-700 border-2 border-blue-900 `}
+      } z-50 absolute top-0 left-0 right-0 flex items-center justify-center w-full p-4 mx-auto text-lg text-center text-white bg-gray-900 bg-opacity-70`}
     >
       <p className='mr-2'>{message}</p>
-      <FiX className='w-6 h-6 cursor-pointer' onClick={setCloseAlert} />
+      <FiX className='flex-shrink-0 w-6 h-6 cursor-pointer' onClick={setCloseAlert} />
     </div>
   )
 }
