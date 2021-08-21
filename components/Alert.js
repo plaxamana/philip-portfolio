@@ -6,7 +6,7 @@ export default function Alert({ message, closeAlert, setCloseAlert }) {
     <div
       className={`${
         closeAlert ? 'hidden' : null
-      } z-50 sticky bottom-0 flex items-center justify-center w-full p-4 mx-auto text-lg text-center text-white bg-blue-700 `}
+      } z-50 sticky top-0 flex items-center justify-center w-full p-4 mx-auto text-lg text-center text-white bg-gray-900 `}
     >
       <div className='mr-2'>
         {message}
