@@ -16,11 +16,6 @@ export default function Home({ projects, author }) {
   return (
     <PageLayout>
       <div className='relative overflow-hidden'>
-      <Alert
-        message='I am available for hire.  Please contact me below'
-        closeAlert={closeAlert}
-        setCloseAlert={() => setCloseAlert(true)}
-      />
         <TopBlobs
           blobSrc1='/images/svg/home/orange_blob.svg'
           blobSrc2='/images/svg/home/yellow_blob.svg'
@@ -33,6 +28,11 @@ export default function Home({ projects, author }) {
         <ContactMe />
         <Footer />
       </div>
+        <Alert
+          message='I am available for hire. '
+          closeAlert={closeAlert}
+          setCloseAlert={() => setCloseAlert(true)}
+        />
     </PageLayout>
   )
 }

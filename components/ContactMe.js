@@ -51,7 +51,6 @@ export default function ContactMe() {
             <p className='mb-2 text-3xl font-black'>
               Say hello! Shoot me a line below.
             </p>
-            <p>Or shoot me an email at philip.j.laxamana@gmail.com</p>
           </div>
           <form
             className='z-10 grid w-full max-w-3xl grid-cols-2 p-4 mx-auto md:w-3/4 gap-y-3 gap-x-4'
