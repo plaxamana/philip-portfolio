@@ -7,7 +7,7 @@ import { pages } from '../globalvars'
 export default function Hero() {
   return (
     <section>
-      <div className='max-w-2xl pt-40 mx-auto text-center md:pt-60'>
+      <div className='max-w-2xl pt-60 mx-auto text-center md:pt-60'>
         <p className='text-lg sm:text-2xl'>Hi, I&apos;m Philip</p>
         <h1 className='text-4xl font-black leading-none sm:text-6xl'>
           I create beautiful websites that make the internet look great
