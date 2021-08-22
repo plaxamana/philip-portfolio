@@ -12,7 +12,7 @@ import { getAuthor, getFeaturedProjects } from '@/lib/api'
 export default function Home({ projects, author }) {
   return (
     <PageLayout>
-      <Header />
+      <Header showAlert={true} />
       <div className='relative overflow-x-hidden'>
         <TopBlobs
           blobSrc1='/images/svg/home/orange_blob.svg'

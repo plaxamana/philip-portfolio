@@ -6,7 +6,7 @@ import Link from 'next/link'
 import { pages } from '../globalvars'
 import Alert from '@/components/Alert'
 
-export default function Header() {
+export default function Header({showAlert}) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [closeAlert, setCloseAlert] = useState(false)
   const [navbar, setNavbar] = useState(false)
@@ -25,11 +25,13 @@ export default function Header() {
 
   return (
     <div className='sticky top-0 z-50 -mt-16'>
-      <Alert
-        message='I am available for hire. '
-        closeAlert={closeAlert}
-        setCloseAlert={() => setCloseAlert(true)}
-      />
+      { showAlert && 
+        <Alert
+          message='I am available for hire. '
+          closeAlert={closeAlert}
+          setCloseAlert={() => setCloseAlert(true)}
+        />
+      }
       <nav className={`w-full transition-all duration-300 ${navbar ? 'bg-gray-900 text-white' : null }`}>
         <div className='flex items-center justify-between px-4 mx-auto md:container'>
           <Link href='/'>
