@@ -8,7 +8,7 @@ import Footer from '@/components/Footer'
 
 export default function Page404() {
   return (
-    <PageLayout>
+    <PageLayout title='Page Not Found | Philip Laxamana | Fullstack Software Engineer'>
       <div className='relative overflow-hidden'>
         <TopBlobs
           blobSrc1='/images/svg/home/orange_blob.svg'

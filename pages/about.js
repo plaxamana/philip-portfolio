@@ -11,7 +11,7 @@ import { getAuthor } from '@/lib/api'
 
 export default function AboutPage({ author }) {
   return (
-    <PageLayout title='About Me | Philip Laxamana | Software Engineer'>
+    <PageLayout title='About Me | Philip Laxamana | Fullstack Software Engineer'>
       <div className='relative'>
         <Header />
         <div

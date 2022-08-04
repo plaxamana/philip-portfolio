@@ -24,62 +24,64 @@ export default function PortfolioItemPage({ project, preview }) {
   }
 
   return (
-    <div className='relative min-h-screen overflow-hidden'>
-      <TopBlobs
-        blobSrc1='/images/svg/home/blue_blob.svg'
-        blobSrc2='/images/svg/home/yellow_blob.svg'
-      />
-      {preview && <PreviewAlert />}
+    <PageLayout title={`${project.title} | Philip Laxamana | Fullstack Software Engineer`}>
       <Header />
-      <div className='container px-4 py-32 mx-auto lg:pt-48'>
-        <div className='grid grid-cols-1 gap-y-16 md:grid-cols-2 md:gap-x-4 lg:gap-x-16 md:mb-16'>
-          {/* Project Info */}
-          <div className='space-y-4 text-lg'>
-            <h2 className='text-3xl font-bold'>{project.title}</h2>
-            <div className='prose-lg'>
-              <BlockContent blocks={project.body} />
-            </div>
-            {/* Badges */}
-            <div className='pb-8'>
-              <p className='mb-2 font-bold'>Developed with:</p>
-              <div className='flex flex-wrap space-x-2'>
-                {project.categories.map(({ title }) => (
-                  <Badge key={title} title={title} />
-                ))}
+      <div className='relative min-h-screen overflow-hidden'>
+        <TopBlobs
+          blobSrc1='/images/svg/home/blue_blob.svg'
+          blobSrc2='/images/svg/home/yellow_blob.svg'
+        />
+        {preview && <PreviewAlert />}
+        <div className='container px-4 py-32 mx-auto lg:pt-48'>
+          <div className='grid grid-cols-1 gap-y-16 md:grid-cols-2 md:gap-x-4 lg:gap-x-16 md:mb-16'>
+            {/* Project Info */}
+            <div className='space-y-4 text-lg'>
+              <h2 className='text-3xl font-bold'>{project.title}</h2>
+              <div className='prose-lg'>
+                <BlockContent blocks={project.body} />
+              </div>
+              {/* Badges */}
+              <div className='pb-8'>
+                <p className='mb-2 font-bold'>Developed with:</p>
+                <div className='flex flex-wrap space-x-2'>
+                  {project.categories.map(({ title }) => (
+                    <Badge key={title} title={title} />
+                  ))}
+                </div>
+              </div>
+              {/* buttons */}
+              <div className='text-base md:flex md:flex-col lg:flex-row lg:space-x-4'>
+                <Button
+                  icon='globe'
+                  href={project.liveSite}
+                  type='primary'
+                  caption='View Live Site'
+                  target='_blank'
+                />
+                <Button
+                  icon='eye'
+                  href={project.codeRepo}
+                  caption='View Source Code'
+                  target='_blank'
+                />
               </div>
             </div>
-            {/* buttons */}
-            <div className='text-base md:flex md:flex-col lg:flex-row lg:space-x-4'>
-              <Button
-                icon='globe'
-                href={project.liveSite}
-                type='primary'
-                caption='View Live Site'
-                target='_blank'
-              />
-              <Button
-                icon='eye'
-                href={project.codeRepo}
-                caption='View Source Code'
-                target='_blank'
+            {/* Project image */}
+            <div className='order-first md:order-last'>
+              <Image
+                src={project.mainImage.url}
+                alt={project.mainImage.alt}
+                layout='responsive'
+                objectFit='cover'
+                height={470}
+                width={586}
               />
             </div>
           </div>
-          {/* Project image */}
-          <div className='order-first md:order-last'>
-            <Image
-              src={project.mainImage.url}
-              alt={project.mainImage.alt}
-              layout='responsive'
-              objectFit='cover'
-              height={470}
-              width={586}
-            />
-          </div>
         </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
+    </PageLayout>
   )
 }
 

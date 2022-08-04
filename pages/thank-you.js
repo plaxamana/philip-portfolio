@@ -8,24 +8,22 @@ import Footer from '@/components/Footer'
 
 export default function ThankYouPage() {
   return (
-    <PageLayout title='Message Received | Philip Laxamana'>
+    <PageLayout title='Message Received | Philip Laxamana | Fullstack Software Engineer'>
+      <Header />
       <div className='relative overflow-hidden'>
         <TopBlobs
           blobSrc1='/images/svg/home/orange_blob.svg'
           blobSrc2='/images/svg/home/yellow_blob.svg'
         />
-        <Header />
         <div className='max-w-2xl min-h-screen mx-auto text-center pt-60'>
           <div className='max-w-2xl p-4 mb-6'>
-            <Image
-              src={Message}
-              layout='responsive'
-              alt='Message Received'
-            />
+            <Image src={Message} layout='responsive' alt='Message Received' />
           </div>
           <div className='space-y-4 text-xl'>
-            <h1 className='text-5xl font-bold text-blue-900 uppercase'>Message Received</h1>
-            <p>I&apos;ll get back to you as soon as I can.  Thanks!</p>
+            <h1 className='text-5xl font-bold text-blue-900 uppercase'>
+              Message Received
+            </h1>
+            <p>I&apos;ll get back to you as soon as I can. Thanks!</p>
             <p>
               Return to{' '}
               <Link href='/'>
