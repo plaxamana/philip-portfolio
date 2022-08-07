@@ -66,14 +66,14 @@ export default function BlogPostPage({ post, preview }) {
             </div>
           </div>
         </div>
-        <div className='absolute bottom-0 left-0 right-0 w-full -z-20'>
+        {/* <div className='absolute bottom-0 left-0 right-0 w-full -z-20'>
           <Image
             src={light_wave}
             alt='light wave divider'
             layout='responsive'
             objectFit='cover'
           />
-        </div>
+        </div> */}
         <Footer />
       </div>
     </PageLayout>
